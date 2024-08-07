@@ -41,6 +41,9 @@ module.exports = {
       lineHeight: {
         hero: '4.5rem',
       },
+      backgroundColor: {
+        'black-60': 'rgba(0, 0, 0, 0.6)',
+      },
     },
   },
   plugins: [],
