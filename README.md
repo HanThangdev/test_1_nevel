@@ -1,88 +1,3 @@
-# Landing Page Template built with Next JS 14+, Tailwind CSS 3 and TypeScript [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
-
-<p align="center">
-  <a href="https://creativedesignsguru.com/demo/nextjs-landing-page/"><img src="public/assets/images/nextjs-landing-page-banner.png?raw=true" alt="Next js starter banner"></a>
-</p>
-
-🚀 Landing Page theme written in Next.js, Tailwind CSS and TypeScript ⚡️ Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, VSCode, Netlify, PostCSS, Tailwind CSS.
-
-Clone this project and use it to create your own [Next.js](https://nextjs.org) project. You can check a [Next js templates demo](https://creativedesignsguru.com/demo/nextjs-landing-page/).
-
-## Sponsors
-
-<table width="100%">
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/sentry-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/sentry-dark.png?raw=true">
-          <img alt="Sentry" src="public/assets/images/sentry-dark.png?raw=true">
-        </picture>
-      </a>
-      <a href="https://about.codecov.io/codecov-free-trial/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/codecov-white.svg?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/codecov-dark.svg?raw=true">
-          <img alt="Codecov" src="public/assets/images/codecov-dark.svg?raw=true">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/better-stack-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/better-stack-dark.png?raw=true">
-          <img alt="Better Stack" src="public/assets/images/better-stack-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
-    <td align="center" style=width="33%">
-      <a href="https://nextlessjs.com">
-        <img src="public/assets/images/nextlessjs.png?raw=true" alt="React SaaS Boilerplate Next.js" />
-      </a>
-    </td>
-  </tr>
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/a3cd2a25-377b-4c0d-a3d3-bce121df2c94">
-          <source media="(prefers-color-scheme: light)" srcset="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/3459074d-c3e2-46c5-8be4-b836cb7989ea">
-          <img alt="Clerk – Authentication & User Management for Next.js" src="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/3459074d-c3e2-46c5-8be4-b836cb7989ea">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://turso.tech/?utm_source=nextjsstarterbp">
-        <img src="public/assets/images/turso.png?raw=true" alt="SQLite Developer Experience">
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://l.crowdin.com/next-js">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/crowdin-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/crowdin-dark.png?raw=true">
-          <img alt="Crowdin" src="public/assets/images/crowdin-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
-  </tr>
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="mailto:contact@creativedesignsguru.com">
-        Add your logo here
-      </a>
-    </td>
-  </tr>
-</table>
-
-### DEMO
-
-[![Nextjs Landing Page Template Screenshot](public/assets/images/nextjs-landing-page-screenshot.png?raw=true)](https://creativedesignsguru.com/demo/nextjs-landing-page/)
-
-Check out our [live demo](https://creativedesignsguru.com/demo/nextjs-landing-page/).
-
 ### Features
 
 Developer experience first:
@@ -165,7 +80,7 @@ Open http://localhost:3000 with your favorite browser to see your project. For y
 │   ├── navigation       # Atomic navigation component
 │   ├── pages            # Next JS pages
 │   ├── styles           # PostCSS style folder with Tailwind
-│   ├── templates        # Default template
+│   ├── layouts        # Default template
 │   └── utils            # Utility folder
 ├── tailwind.config.js   # Tailwind CSS configuration
 └── tsconfig.json        # TypeScript configuration
@@ -180,14 +95,14 @@ You can easily configure the theme. Please change the following file:
 - `utils/AppConfig.ts`: configuration file
 - `src/pages/index.tsx`: the index page of the theme that uses the `Base` component
 - `src/template/Base.tsx`: the `Base` component using component blocks
-- `src/templates/*`: the list of component blocks
+- `src/layouts/*`: the list of component blocks
 - `src/*`: other folders in src are the atomic components used by components blocks
 
 Here is the layer:
 
 - the entry point: `index.tsx` in `src/pages`
-- the `Base` template: `Base.tsx` in `src/templates`
-- use component blocks from `src/templates/*`
+- the `Base` template: `Base.tsx` in `src/layouts`
+- use component blocks from `src/layouts/*`
 - use atomic components from `src/*`
 
 ### Deploy to production
@@ -230,78 +145,3 @@ Everyone is welcome to contribute to this project. Feel free to open an issue if
 Licensed under the MIT License, Copyright © 2024
 
 See [LICENSE](LICENSE) for more information.
-
-## Sponsors
-
-<table width="100%">
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/sentry-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/sentry-dark.png?raw=true">
-          <img alt="Sentry" src="public/assets/images/sentry-dark.png?raw=true">
-        </picture>
-      </a>
-      <a href="https://about.codecov.io/codecov-free-trial/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/codecov-white.svg?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/codecov-dark.svg?raw=true">
-          <img alt="Codecov" src="public/assets/images/codecov-dark.svg?raw=true">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/better-stack-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/better-stack-dark.png?raw=true">
-          <img alt="Better Stack" src="public/assets/images/better-stack-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
-    <td align="center" style=width="33%">
-      <a href="https://nextlessjs.com">
-        <img src="public/assets/images/nextlessjs.png?raw=true" alt="React SaaS Boilerplate Next.js" />
-      </a>
-    </td>
-  </tr>
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/a3cd2a25-377b-4c0d-a3d3-bce121df2c94">
-          <source media="(prefers-color-scheme: light)" srcset="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/3459074d-c3e2-46c5-8be4-b836cb7989ea">
-          <img alt="Clerk – Authentication & User Management for Next.js" src="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/3459074d-c3e2-46c5-8be4-b836cb7989ea">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://turso.tech/?utm_source=nextjsstarterbp">
-        <img src="public/assets/images/turso.png?raw=true" alt="SQLite Developer Experience">
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://l.crowdin.com/next-js">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/crowdin-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/crowdin-dark.png?raw=true">
-          <img alt="Crowdin" src="public/assets/images/crowdin-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
-  </tr>
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="mailto:contact@creativedesignsguru.com">
-        Add your logo here
-      </a>
-    </td>
-  </tr>
-</table>
-
----
-
-Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
-
-[![Sponsor Next JS Boilerplate](https://cdn.buymeacoffee.com/buttons/default-red.png)](https://github.com/sponsors/ixartz)
