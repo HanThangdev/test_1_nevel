@@ -1,4 +1,4 @@
-import { Base } from '../templates/Base';
+import { Base } from '../component/templates/Base';
 
 const Index = () => <Base />;
 

@@ -8,7 +8,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang={AppConfig.locale}>
-        <Head />
+        <Head>
+          <link
+            href="https://db.onlinewebfonts.com/c/05e476e067ffef74ca5686f229c40a63?family=PingFang+SC+Regular"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

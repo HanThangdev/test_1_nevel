@@ -7,7 +7,7 @@ type INavbarProps = {
 };
 
 const NavbarTwoColumns = (props: INavbarProps) => (
-  <div className="flex flex-wrap items-center justify-between">
+  <div className="flex h-full flex-wrap items-center justify-between">
     <div>
       <Link href="/">{props.logo}</Link>
     </div>
@@ -17,18 +17,6 @@ const NavbarTwoColumns = (props: INavbarProps) => (
         {props.children}
       </ul>
     </nav>
-
-    <style jsx>
-      {`
-        .navbar :global(li:not(:first-child)) {
-          @apply mt-0;
-        }
-
-        .navbar :global(li:not(:last-child)) {
-          @apply mr-5;
-        }
-      `}
-    </style>
   </div>
 );
 
