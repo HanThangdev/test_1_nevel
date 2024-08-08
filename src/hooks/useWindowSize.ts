@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import useRafState from "./useRafState";
-import { isBrowser, off, on } from "@/utils/misc";
+import { isBrowser, off, on } from '@/utils/misc';
+
+import useRafState from './useRafState';
 
 const useWindowSize = (initialWidth = Infinity, initialHeight = Infinity) => {
   const [state, setState] = useRafState<{ width: number; height: number }>({
     width: isBrowser ? window.innerWidth : initialWidth,
     height: isBrowser ? window.innerHeight : initialHeight,
   });
-
+  /* eslint-disable consistent-return */
   useEffect((): (() => void) | void => {
     if (isBrowser) {
       const handler = () => {
@@ -18,9 +19,9 @@ const useWindowSize = (initialWidth = Infinity, initialHeight = Infinity) => {
         });
       };
 
-      on(window, "resize", handler);
+      on(window, 'resize', handler);
 
-      return () => off(window, "resize", handler);
+      return () => off(window, 'resize', handler);
     }
   }, []);
 
