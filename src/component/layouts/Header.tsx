@@ -11,7 +11,7 @@ import { Section } from './Section';
 
 const Header = () => {
   const [top, setTop] = useState<boolean>(true);
-  const [active, setActive] = useState('/');
+  const [active, setActive] = useState('HOME');
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
 
   const { width } = useWindowSize();
@@ -69,9 +69,9 @@ const Header = () => {
                     {HEADER_LINKS.map((item, index) => (
                       <li
                         key={index}
-                        onClick={() => setActive(item.href)}
+                        onClick={() => setActive(item.key)}
                         className={`h-full ${
-                          active === item.href
+                          active === item.key
                             ? 'borer-b-white  border-b-2 text-white'
                             : 'text-gray-500'
                         }`}
