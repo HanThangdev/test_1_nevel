@@ -65,7 +65,7 @@ export default function MobileMenu({ links }: IMobileMenuProps) {
           show={mobileNavOpen}
           as="nav"
           id="mobile-nav"
-          className="absolute left-0 top-full z-20 h-screen w-full overflow-scroll bg-[#000E1A] pb-16"
+          className="absolute left-0 top-full z-20 h-screen w-full overflow-hidden bg-[#158C84] pb-16"
           enter="transition ease-out duration-200 transform"
           enterFrom="opacity-0 -translate-y-2"
           enterTo="opacity-100 translate-y-0"

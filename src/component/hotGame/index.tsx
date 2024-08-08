@@ -1,37 +1,75 @@
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { CardHotGame } from "./card";
-import useWindowSize from "@/hooks/useWindowSize";
-import React, { useRef } from "react";
-import { Swiper as SwiperType } from "swiper/types";
-import {navigate_right } from "@/assets/svgs";
-import Image from "next/image";
+import Image from 'next/image';
+import React, { useEffect, useRef, useState } from 'react';
+import Datepicker from 'react-tailwindcss-datepicker';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper/types';
+
+import { navigate_right } from '@/assets/svgs';
+import { HOT_GAME_LARGE_SCREEN, HOT_GAME_SMALL_SCREEN } from '@/constants';
+import useWindowSize from '@/hooks/useWindowSize';
+import type { HotGameInfo } from '@/types';
+import { multipleArray } from '@/utils/funtion';
+
+import { CardHotGame } from './card';
 
 const HotGame = () => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
   const swiperRef = useRef<SwiperType>();
+  const [data, setData] = useState<HotGameInfo[]>([]);
   const { width } = useWindowSize();
 
+  useEffect(() => {
+    setData(
+      width > 500
+        ? multipleArray(HOT_GAME_LARGE_SCREEN, 3)
+        : multipleArray(HOT_GAME_SMALL_SCREEN, 3),
+    );
+  }, [width]);
+
+  const [value, setValue] = useState(null);
+
+  const handleValueChange = (newValue: any) => {
+    console.log('newValue:', newValue);
+    setValue(newValue);
+  };
+
   return (
-    <div className='p-5 lg:p-0 "'>
+    <div className="w-full p-5 lg:p-0">
       <div className="flex justify-between pb-5">
-        <h1 className="text-2xl font-medium text-black uppercase lg:capitalize">
+        <h1 className="text-2xl font-medium uppercase text-black lg:capitalize">
           Hot Game
         </h1>
         <div>
-          <button
-            className="cursor-pointer"
-            onClick={() => swiperRef.current?.slidePrev()}
-          >
-             <Image alt="navigate_right" src={navigate_right} className="rotate-180"/>
-          </button>
-          <button
-            className="cursor-pointer"
-            onClick={() => swiperRef.current?.slideNext()}
-          >
-            <Image alt="navigate_right" src={navigate_right} />
-          </button>
+          <div className="hidden lg:block">
+            <button
+              className="cursor-pointer"
+              onClick={() => swiperRef.current?.slidePrev()}
+            >
+              <Image
+                alt="navigate_right"
+                src={navigate_right}
+                className="rotate-180"
+              />
+            </button>
+            <button
+              className="cursor-pointer"
+              onClick={() => swiperRef.current?.slideNext()}
+            >
+              <Image alt="navigate_right" src={navigate_right} />
+            </button>
+          </div>
+          <div className="block lg:hidden">
+            <div className="w-40 border">
+              <Datepicker
+                value={value}
+                onChange={handleValueChange}
+                showShortcuts={true}
+                placeholder="Release Date"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <Swiper
@@ -43,23 +81,16 @@ const HotGame = () => {
           nextEl: navigationNextRef.current,
         }}
         modules={[Navigation]}
-        className="swiper_navigation_custom lg:max-w-[1000px]"
+        className="swiper_navigation_custom !m-0 md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px]"
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
       >
-        <SwiperSlide>
-          <CardHotGame />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardHotGame />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardHotGame />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardHotGame />
-        </SwiperSlide>
+        {data.map((item, index) => (
+          <SwiperSlide key={index} className="!flex justify-center">
+            <CardHotGame data={item} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

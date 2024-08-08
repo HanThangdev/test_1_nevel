@@ -1,5 +1,8 @@
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/react-tailwindcss-datepicker/dist/index.esm.js',
+  ],
   theme: {
     fontSize: {
       xs: '0.75rem',
@@ -14,6 +17,9 @@ module.exports = {
       '6xl': '4rem',
     },
     extend: {
+      fontFamily: {
+        'noto-sans': ['Noto Sans SC', 'sans-serif'],
+      },
       colors: {
         primary: {
           100: '#E6F6FE',

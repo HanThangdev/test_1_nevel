@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'Starter',
-  title: 'Nextjs Starter',
-  description: 'Starter code for your Nextjs Boilerplate with Tailwind CSS',
+  site_name: '4Tech',
+  title: '4Tech | To the moon',
+  description: 'Reaching for the Stars, Soaring to New Heights',
   locale: 'en',
 };
