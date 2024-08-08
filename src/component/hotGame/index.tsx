@@ -31,7 +31,6 @@ const HotGame = () => {
   const [value, setValue] = useState(null);
 
   const handleValueChange = (newValue: any) => {
-    console.log('newValue:', newValue);
     setValue(newValue);
   };
 
