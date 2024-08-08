@@ -7,17 +7,48 @@
 @font-face {
   font-family: "PingFang SC Regular";
   src: url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.eot");
-  src: url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.eot?#iefix") format("embedded-opentype"),
-       url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.woff2") format("woff2"),
-       url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.woff") format("woff"),
-       url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.ttf") format("truetype"),
-       url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.svg#PingFang SC Regular") format("svg");
+  src:
+    url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/05e476e067ffef74ca5686f229c40a63.svg#PingFang SC Regular")
+      format("svg");
 }
 
 body {
+  @apply transition-all ease-in-out;
   font-family: "PingFang SC Regular", sans-serif;
 }
 
-.header_color {
-  background-color: rgba(0, 0, 0, 60%);
+.swiper_custom {
+  @apply !flex justify-center;
+    .swiper-pagination-bullet {
+      @apply bg-white ;
+    }
+
+    .swiper-pagination-bullet-active {
+      @apply w-2 h-2 bg-white; /* Active bullet color */
+    }
+
+    .swiper-pagination {
+      @apply max-w-[1280px] flex lg:justify-start justify-center;
+      left: inherit !important;
+    }
+
+    .swiper-pagination-bullet-active::before {
+      content: "";
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 50%;
+      transform: translate(-25%, -25%);
+      z-index: -1;
+    }
 }

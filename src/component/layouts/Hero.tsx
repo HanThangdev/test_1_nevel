@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { hero_1 } from '@/assets/images';
 
-import { Section } from '../layout/Section';
+import { Section } from './Section';
 
 const Hero = () => {
   const banners = [
@@ -39,7 +39,7 @@ const Hero = () => {
         spaceBetween={30}
         pagination={{ clickable: true }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="swiper_custom"
       >
         {banners.map((banner, index) => (
           <SwiperSlide key={index} className="!flex justify-center">

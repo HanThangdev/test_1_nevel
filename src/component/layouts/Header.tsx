@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { Background } from '../background/Background';
-import { Section } from '../layout/Section';
+import { Section } from './Section';
 import { Logo } from './Logo';
 import MobileMenu from './MobileMenu';
 

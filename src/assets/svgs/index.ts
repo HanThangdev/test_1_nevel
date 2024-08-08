@@ -9,9 +9,11 @@ import search from './search.svg';
 import time_line from './time_line.svg';
 import twitter from './twitter.svg';
 import youtube from './youtube.svg';
+import navigate_right from './navigate_right.svg';
 
 export {
   all_game,
+  navigate_right,
   close,
   filter,
   home_page,

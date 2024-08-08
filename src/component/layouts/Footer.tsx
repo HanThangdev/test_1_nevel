@@ -10,7 +10,7 @@ import { Fragment } from 'react';
 
 import { linkedin, plus_icon, twitter, youtube } from '@/assets/svgs';
 
-import { Section } from '../layout/Section';
+import { Section } from './Section';
 import { Logo } from './Logo';
 
 const Footer = () => {
@@ -111,8 +111,8 @@ const Footer = () => {
 
   return (
     <Section className="px-5 lg:py-20">
-      <footer className="pt-10 ">
-        <div className="max-w-screen-medium mx-4 pb-20 pt-40 md:mx-8 lg:m-auto">
+      <footer className=" pt-20 ">
+        <div className="max-w-screen-medium mx-4 pb-20 md:mx-8 lg:m-auto">
           <div className="flex flex-col-reverse flex-wrap justify-between gap-8 pt-16 md:pt-12 lg:flex-row">
             <div className="mb-2 w-full lg:w-3/12">
               <div className="hidden lg:block">
@@ -162,11 +162,11 @@ const Footer = () => {
                     {footerlink.links.map((link) => (
                       <li
                         key={link.link}
-                        className="cursor-pointer lg:text-nowrap"
+                        className=" lg:text-nowrap"
                       >
                         <Link
                           href={link.link}
-                          className="cursor-pointer text-sm font-medium text-[#B3B3B3] transition duration-150 ease-in-out hover:text-black"
+                          className="!cursor-pointer text-sm font-medium text-[#B3B3B3] hover:text-black"
                         >
                           {link.name}
                         </Link>
