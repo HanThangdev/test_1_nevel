@@ -8,6 +8,7 @@ interface ICardHotGameProps {
 const CardHotGame = ({ data }: ICardHotGameProps) => (
   <div className="flex flex-col items-center rounded-2xl bg-[#C58F03] sm:max-w-[490px] sm:bg-white">
     <Image
+      loading="lazy"
       src={data.coverImg}
       alt={data.name}
       className=" w-full rounded-t-2xl sm:pb-8"
@@ -16,6 +17,7 @@ const CardHotGame = ({ data }: ICardHotGameProps) => (
       <div className="m-6 flex items-center justify-between gap-3 lg:mx-0">
         <div>
           <Image
+            loading="lazy"
             src={data.avatarImg}
             alt={data.name}
             className="w-14 basis-1/5 object-cover sm:w-24"

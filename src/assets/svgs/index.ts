@@ -1,4 +1,5 @@
 import all_game from './all_game.svg';
+import arrow from './arrow.svg';
 import close from './close.svg';
 import filter from './filter.svg';
 import home_page from './home_page.svg';
@@ -15,6 +16,7 @@ import youtube from './youtube.svg';
 
 export {
   all_game,
+  arrow,
   close,
   filter,
   home_page,

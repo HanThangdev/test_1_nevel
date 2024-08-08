@@ -22,7 +22,7 @@ body {
     }
 
     .swiper-pagination {
-      @apply max-w-[1280px] flex lg:justify-start justify-center;
+      @apply max-w-[1280px] flex lg:justify-start justify-center !bottom-32 sm:!bottom-5;
       left: inherit !important;
     }
 

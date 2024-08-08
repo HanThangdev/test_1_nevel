@@ -12,6 +12,8 @@ import { Section } from './Section';
 const Header = () => {
   const [top, setTop] = useState<boolean>(true);
   const [active, setActive] = useState('/');
+  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
+
   const { width } = useWindowSize();
 
   useEffect(() => {
@@ -51,7 +53,7 @@ const Header = () => {
     <Background color="bg-gray-100">
       <Section isFullWidth={true}>
         <div
-          className={`absolute z-30 w-full transition duration-300 ease-in-out lg:fixed lg:top-0 lg:bg-black-60`}
+          className={`absolute z-50 w-full transition duration-200 ease-in-out lg:fixed lg:top-0 lg:bg-black-60 ${mobileNavOpen ? 'bg-[#158C84]' : ''}`}
         >
           <div className="mx-auto max-w-screen-xl justify-center">
             <div className="mx-4 flex h-20 items-center justify-between">
@@ -85,7 +87,11 @@ const Header = () => {
                   </ul>
                 </nav>
               </div>
-              <MobileMenu links={HEADER_LINKS} />
+              <MobileMenu
+                mobileNavOpen={mobileNavOpen}
+                setMobileNavOpen={setMobileNavOpen}
+                links={HEADER_LINKS}
+              />
             </div>
           </div>
         </div>

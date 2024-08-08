@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { arrow } from '@/assets/svgs';
 import { TOP_BANNERS_LARGE, TOP_BANNERS_SMALL } from '@/constants';
 import useWindowSize from '@/hooks/useWindowSize';
 import type { BannerInfo } from '@/types';
@@ -16,7 +17,7 @@ const TopBanners = () => {
 
   useEffect(() => {
     setData(
-      width > 500
+      width > 640
         ? multipleArray(TOP_BANNERS_LARGE, 3)
         : multipleArray(TOP_BANNERS_SMALL, 3),
     );
@@ -24,7 +25,7 @@ const TopBanners = () => {
   return (
     <Section
       yPadding="pt-20 pb-32"
-      className="relative bg-[#03827E]"
+      className="relative bg-transparent sm:bg-[#03827E]"
       isFullWidth={true}
     >
       <Swiper
@@ -36,6 +37,7 @@ const TopBanners = () => {
         {data.map((banner, index) => (
           <SwiperSlide key={index} className="!flex justify-center">
             <Image
+              loading="lazy"
               src={banner.image}
               alt={banner.alt}
               className="max-h-[576px] w-full object-cover lg:max-w-[1400px]"
@@ -43,6 +45,13 @@ const TopBanners = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="absolute bottom-10 z-20 flex w-full flex-col items-center justify-center gap-3 text-white sm:hidden">
+        <h1 className="text-3xl font-light">Chicky Run</h1>
+        <a href="#" className="flex cursor-pointer gap-2 hover:underline">
+          <h2 className="text-base font-extralight">Game Details</h2>
+          <Image loading="lazy" src={arrow} alt={'arrow'} className="" />
+        </a>
+      </div>
     </Section>
   );
 };

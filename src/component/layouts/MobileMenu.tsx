@@ -2,17 +2,22 @@
 
 import { Transition } from '@headlessui/react';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { close, menu } from '@/assets/svgs';
 import type { MenuTypes } from '@/types';
 
 interface IMobileMenuProps {
   links: MenuTypes[];
+  mobileNavOpen: boolean;
+  setMobileNavOpen: Dispatch<SetStateAction<boolean>>;
 }
-export default function MobileMenu({ links }: IMobileMenuProps) {
-  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
-
+export default function MobileMenu({
+  links,
+  mobileNavOpen,
+  setMobileNavOpen,
+}: IMobileMenuProps) {
   const trigger = useRef<HTMLButtonElement>(null);
   const mobileNav = useRef<HTMLDivElement>(null);
 
@@ -53,6 +58,7 @@ export default function MobileMenu({ links }: IMobileMenuProps) {
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
         <Image
+          loading="lazy"
           src={mobileNavOpen ? close : menu}
           alt="menu"
           className="size-[28px] object-contain"
@@ -65,7 +71,7 @@ export default function MobileMenu({ links }: IMobileMenuProps) {
           show={mobileNavOpen}
           as="nav"
           id="mobile-nav"
-          className="absolute left-0 top-full z-20 h-screen w-full overflow-hidden bg-[#158C84] pb-16"
+          className="absolute left-0 top-full z-50 size-full h-screen overflow-hidden bg-[#158C84] pb-16"
           enter="transition ease-out duration-200 transform"
           enterFrom="opacity-0 -translate-y-2"
           enterTo="opacity-100 translate-y-0"

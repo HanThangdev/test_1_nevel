@@ -7,6 +7,7 @@ import type { Swiper as SwiperType } from 'swiper/types';
 import { navigate_right } from '@/assets/svgs';
 import { DATA_HOT_CAT } from '@/constants';
 import useWindowSize from '@/hooks/useWindowSize';
+import { multipleArray } from '@/utils/funtion';
 
 import { CardHotCat } from './card';
 
@@ -29,6 +30,7 @@ const HottestGame = () => {
             onClick={() => swiperRef.current?.slidePrev()}
           >
             <Image
+              loading="lazy"
               alt="navigate_right"
               src={navigate_right}
               className="rotate-180"
@@ -38,7 +40,7 @@ const HottestGame = () => {
             className="cursor-pointer"
             onClick={() => swiperRef.current?.slideNext()}
           >
-            <Image alt="navigate_right" src={navigate_right} />
+            <Image loading="lazy" alt="navigate_right" src={navigate_right} />
           </button>
         </div>
       </div>
@@ -60,7 +62,7 @@ const HottestGame = () => {
           swiperRef.current = swiper;
         }}
       >
-        {DATA_HOT_CAT.map((item, index) => (
+        {multipleArray(DATA_HOT_CAT, 3).map((item, index) => (
           <SwiperSlide key={index} className="!flex justify-center">
             <CardHotCat data={item} />
           </SwiperSlide>
