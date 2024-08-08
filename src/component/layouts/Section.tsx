@@ -11,10 +11,8 @@ type ISectionProps = {
 
 const Section = (props: ISectionProps) => {
   return (
-    <div className={props?.className || ''}>
-      <div
-        className={`mx-auto ${props?.isFullWidth ? 'w-full' : 'max-w-screen-xl'}`}
-      >
+    <div className={` ${props?.className || ''} mx-auto ${props?.isFullWidth ? 'w-full' : 'max-w-screen-xl'}`}>
+      
         {(props.title || props.description) && (
           <div className="mb-12 text-center">
             {props.title && (
@@ -29,7 +27,6 @@ const Section = (props: ISectionProps) => {
         )}
 
         {props.children}
-      </div>
     </div>
   );
 };
