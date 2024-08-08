@@ -16,8 +16,8 @@ import { Section } from './Section';
 
 const Footer = () => {
   return (
-    <Section className="px-5 lg:py-20">
-      <footer className=" pt-20 ">
+    <Section className="px-5 lg:py-10">
+      <footer>
         <div className="max-w-screen-medium mx-4 pb-20 md:mx-8 lg:m-auto">
           <div className="flex flex-col-reverse flex-wrap justify-between gap-8 pt-16 md:pt-12 lg:flex-row">
             <div className="mb-2 w-full lg:w-3/12">
@@ -38,7 +38,7 @@ const Footer = () => {
                   href={`https://www.linkedin.com/company/chatflyai`}
                   className="cursor-pointer"
                 >
-                  <Image src={linkedin} alt="Icon" />
+                  <Image loading="lazy" src={linkedin} alt="Icon" />
                 </a>
                 <a
                   target="_blank"
@@ -46,7 +46,7 @@ const Footer = () => {
                   href={`https://discord.com/invite/UEGQBrXgY9`}
                   className="cursor-pointer"
                 >
-                  <Image src={youtube} alt="Icon" />
+                  <Image loading="lazy" src={youtube} alt="Icon" />
                 </a>
                 <a
                   target="_blank"
@@ -54,7 +54,7 @@ const Footer = () => {
                   href={`https://discord.com/invite/UEGQBrXgY9`}
                   className="cursor-pointer"
                 >
-                  <Image src={twitter} alt="Icon" />
+                  <Image loading="lazy" src={twitter} alt="Icon" />
                 </a>
               </div>
             </div>
@@ -85,6 +85,7 @@ const Footer = () => {
                               {footerlink.title}
                             </h1>
                             <Image
+                              loading="lazy"
                               width={12}
                               height={12}
                               src={plus_icon}

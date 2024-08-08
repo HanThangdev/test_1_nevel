@@ -184,32 +184,32 @@ const HEADER_LINKS = [
   },
   {
     text: 'GAMES',
-    href: '/games',
+    href: '/',
     key: 'GAMES',
   },
   {
     text: 'NEWS',
-    href: '/news',
+    href: '/',
     key: 'NEWS',
   },
   {
     text: 'MATH',
-    href: '/math',
+    href: '/',
     key: 'MATH',
   },
   {
     text: 'COMPANY',
-    href: '/company',
+    href: '/',
     key: 'COMPANY',
   },
   {
     text: 'EVENTS',
-    href: '/events',
+    href: '/',
     key: 'EVENTS',
   },
   {
     text: 'PARTNERS',
-    href: '/partners',
+    href: '/',
     key: 'PARTNERS',
   },
 ];

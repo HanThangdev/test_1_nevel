@@ -17,6 +17,7 @@ const CardHotCat = ({ data }: ICardHotCatProps) => {
         >
           <div>
             <Image
+              loading="lazy"
               src={data.icon}
               alt={'icon'}
               className="text-xs md:text-sm"
@@ -27,11 +28,13 @@ const CardHotCat = ({ data }: ICardHotCatProps) => {
         </div>
         <div className="grid grid-cols-2 items-end gap-2">
           <Image
+            loading="lazy"
             src={data.bg1}
             alt={'hottest_cat_2'}
             className="w-full object-cover"
           />{' '}
           <Image
+            loading="lazy"
             src={data.bg2}
             alt={'hottest_cat_3'}
             className="w-full object-cover"
@@ -41,11 +44,13 @@ const CardHotCat = ({ data }: ICardHotCatProps) => {
       <div className="grid-cols grid gap-2">
         <div className="grid grid-cols-2 gap-2">
           <Image
+            loading="lazy"
             src={data.bg3}
             alt={'hottest_cat_4'}
             className="w-full object-cover"
           />{' '}
           <Image
+            loading="lazy"
             src={data.bg4}
             alt={'hottest_cat_5'}
             className="w-full object-cover"
@@ -53,6 +58,7 @@ const CardHotCat = ({ data }: ICardHotCatProps) => {
         </div>
         <div>
           <Image
+            loading="lazy"
             src={data.cover}
             alt={'hotgame_1'}
             className="rounded-2xl object-cover"

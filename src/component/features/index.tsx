@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { all_game, filter, home_page, search, time_line } from '@/assets/svgs';
+import {
+  all_game,
+  filter,
+  home_page,
+  plus_icon,
+  search,
+  time_line,
+} from '@/assets/svgs';
 
 import { HottestGame } from '../hotCat';
 import { HotGame } from '../hotGame';
@@ -19,7 +26,7 @@ const Features = () => {
               htmlFor="search"
               className="opacity-20 group-focus-within:opacity-100"
             >
-              <Image alt="Search" src={search} className="" />
+              <Image loading="lazy" alt="Search" src={search} className="" />
             </label>
             <input
               id="search"
@@ -32,43 +39,60 @@ const Features = () => {
             onClick={() => setActive('home')}
             className={`hidden cursor-pointer gap-0 py-3 text-xs lg:flex  lg:gap-2 lg:text-sm ${active === 'home' ? '' : 'opacity-20'}`}
           >
-            <Image alt="Games Home" src={home_page} /> <span> Games Home</span>
+            <Image loading="lazy" alt="Games Home" src={home_page} />{' '}
+            <span> Games Home</span>
           </li>
           <li
             onClick={() => setActive('home')}
             className={`flex min-w-[70px] cursor-pointer flex-col items-center gap-0 py-3 text-xs uppercase lg:hidden lg:flex-row lg:gap-2 lg:text-sm lg:capitalize ${active === 'home' ? ' border-b border-b-[#9F9F9F] lg:border-none' : 'opacity-20'}`}
           >
-            <Image alt="Games Home" src={home_page} /> <span> Home</span>
+            <Image loading="lazy" alt="Games Home" src={home_page} />{' '}
+            <span> Home</span>
           </li>
           <li
             onClick={() => setActive('timeline')}
             className={`flex min-w-[70px] cursor-pointer flex-col items-center gap-0 py-3 text-xs uppercase lg:flex-row lg:gap-2 lg:text-sm lg:capitalize ${active === 'timeline' ? 'border-b border-b-[#9F9F9F] lg:border-none' : 'opacity-20'}`}
           >
-            <Image alt="Time line" src={time_line} /> <span> Timeline</span>
+            <Image loading="lazy" alt="Time line" src={time_line} />{' '}
+            <span> Timeline</span>
           </li>
           <li
             onClick={() => setActive('allgame')}
             className={`flex min-w-[70px] cursor-pointer flex-col items-center gap-0 py-3 text-xs uppercase lg:flex-row lg:gap-2 lg:text-sm lg:capitalize ${active === 'allgame' ? 'border-b border-b-[#9F9F9F] lg:border-none' : 'opacity-20'}`}
           >
-            <Image alt="All Games" src={all_game} />{' '}
+            <Image loading="lazy" alt="All Games" src={all_game} />{' '}
             <span className="text-center align-middle"> All Games</span>
           </li>
           <li
             onClick={() => setActive('search')}
             className={`flex min-w-[70px] cursor-pointer flex-col items-center gap-0 py-3 text-xs uppercase lg:hidden lg:flex-row lg:gap-2 lg:text-sm lg:capitalize ${active === 'search' ? 'border-b border-b-[#9F9F9F] lg:border-none' : 'opacity-20'}`}
           >
-            <Image alt="Search" src={search} /> <span> Search</span>
+            <Image loading="lazy" alt="Search" src={search} />{' '}
+            <span> Search</span>
           </li>
           <li
             onClick={() => setActive('filter')}
-            className={`flex min-w-[70px] cursor-pointer flex-col items-center gap-0 border-l !border-l-[#D9D9D9] py-3 text-xs uppercase lg:hidden  lg:flex-row lg:gap-2 lg:text-sm lg:capitalize ${active === 'filter' ? 'border-b border-b-[#9F9F9F] lg:border-none' : 'opacity-20'}`}
+            className={`flex min-w-[70px] cursor-pointer flex-col items-center gap-0 border-l  py-3 text-xs uppercase lg:hidden  lg:flex-row lg:gap-2 lg:text-sm lg:capitalize ${active === 'filter' ? 'border-b border-b-[#9F9F9F] lg:border-none' : 'opacity-20'} !border-l-[#D9D9D9]`}
           >
-            <Image alt="Filter" src={filter} /> <span> Filter</span>
+            <Image loading="lazy" alt="Filter" src={filter} />{' '}
+            <span> Filter</span>
           </li>
         </ul>
         <div className="basis-[90%]">
           <HotGame />
           <HottestGame />
+        </div>
+      </div>
+      <div className="flex w-full justify-center pt-10 lg:hidden">
+        <div className="flex min-h-14 min-w-80 cursor-pointer items-center justify-center gap-4 rounded-2xl bg-[#D9D9D9]">
+          <span>Load more</span>
+          <Image
+            loading="lazy"
+            width={12}
+            height={12}
+            src={plus_icon}
+            alt={'plus_icon'}
+          />
         </div>
       </div>
     </Section>

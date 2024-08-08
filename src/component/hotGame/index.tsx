@@ -47,6 +47,7 @@ const HotGame = () => {
               onClick={() => swiperRef.current?.slidePrev()}
             >
               <Image
+                loading="lazy"
                 alt="navigate_right"
                 src={navigate_right}
                 className="rotate-180"
@@ -56,7 +57,7 @@ const HotGame = () => {
               className="cursor-pointer"
               onClick={() => swiperRef.current?.slideNext()}
             >
-              <Image alt="navigate_right" src={navigate_right} />
+              <Image loading="lazy" alt="navigate_right" src={navigate_right} />
             </button>
           </div>
           <div className="block lg:hidden">
