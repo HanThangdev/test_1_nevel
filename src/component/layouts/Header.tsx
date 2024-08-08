@@ -1,14 +1,18 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { Background } from '../background/Background';
-import { Section } from './Section';
-import { Logo } from './Logo';
+import { HEADER_LINKS } from '@/constants';
+import useWindowSize from '@/hooks/useWindowSize';
+
+import { Background } from '../background';
+import { Logo } from '../logo';
 import MobileMenu from './MobileMenu';
+import { Section } from './Section';
 
 const Header = () => {
   const [top, setTop] = useState<boolean>(true);
   const [active, setActive] = useState('/');
+  const { width } = useWindowSize();
 
   useEffect(() => {
     const scrollToTop = () => {
@@ -43,49 +47,11 @@ const Header = () => {
     return () => window.removeEventListener('scroll', scrollHandler);
   }, [top]);
 
-  const links = [
-    {
-      text: 'HOME',
-      href: '/',
-      key: 'HOME',
-    },
-    {
-      text: 'GAMES',
-      href: '/games',
-      key: 'GAMES',
-    },
-    {
-      text: 'NEWS',
-      href: '/news',
-      key: 'NEWS',
-    },
-    {
-      text: 'MATH',
-      href: '/math',
-      key: 'MATH',
-    },
-    {
-      text: 'COMPANY',
-      href: '/company',
-      key: 'COMPANY',
-    },
-    {
-      text: 'EVENTS',
-      href: '/events',
-      key: 'EVENTS',
-    },
-    {
-      text: 'PARTNERS',
-      href: '/partners',
-      key: 'PARTNERS',
-    },
-  ];
-
   return (
     <Background color="bg-gray-100">
       <Section isFullWidth={true}>
-        <header
-          className={`fixed top-0 z-30 w-full transition duration-300 ease-in-out lg:bg-black-60`}
+        <div
+          className={`absolute z-30 w-full transition duration-300 ease-in-out lg:fixed lg:top-0 lg:bg-black-60`}
         >
           <div className="mx-auto max-w-screen-xl justify-center">
             <div className="mx-4 flex h-20 items-center justify-between">
@@ -93,12 +59,12 @@ const Header = () => {
                 href="#"
                 className="mr-4 flex shrink-0 items-center text-gray-400"
               >
-                <Logo xl />
+                <Logo xl={width > 1024} />
               </a>
               <div className="h-full">
                 <nav className="hidden h-full pl-6 lg:flex">
                   <ul className="flex grow list-none flex-wrap items-center justify-center">
-                    {links.map((item, index) => (
+                    {HEADER_LINKS.map((item, index) => (
                       <li
                         key={index}
                         onClick={() => setActive(item.href)}
@@ -119,10 +85,10 @@ const Header = () => {
                   </ul>
                 </nav>
               </div>
-              <MobileMenu links={links} />
+              <MobileMenu links={HEADER_LINKS} />
             </div>
           </div>
-        </header>
+        </div>
       </Section>
     </Background>
   );
