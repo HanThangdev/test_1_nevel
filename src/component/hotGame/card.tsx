@@ -27,13 +27,13 @@ const CardHotGame = ({ data }: ICardHotGameProps) => (
           <h1 className="text-xl font-semibold leading-10">{data.name}</h1>
           <h3 className="text-sm font-thin">{data.description}</h3>
         </div>
-        <div className="hidden items-center lg:flex">
+        <div className="hidden items-center sm:flex">
           <button className="h-[28px] w-[75px] rounded-md  border-2 border-[#CCCC] font-semibold text-black">
             View
           </button>
         </div>
       </div>
-      <div className="m-6 flex items-center justify-between lg:hidden">
+      <div className="m-6 flex items-center justify-between sm:hidden">
         <div className="flex flex-col">
           <span>{data.volatility}</span>
           <span className="font-thin">Volatility</span>
